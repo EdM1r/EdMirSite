@@ -2,4 +2,7 @@
 {% block title%} Ed Mir's Site {% endblock %}
 {% block content%}
     <h1>Home page test!</h1>
+    {% for tweet in tweets %}
+        <p>{{tweet.text}}</p>
+    {% endfor %}
 {% endblock %}
