@@ -9,4 +9,10 @@
     {% for post in posts_ig %}
         <a href="{{post['permalink']}}"><img src="{{post['media_url']}}" class="rounded float-start" alt="Image" height="400px" width="400px"></a>
     {% endfor %}
+    <h2>Best Articles from Medium</h2>
+    {% for post in medium_posts %}
+    <h4>{{post['title']}}</h4>
+    <p>{{post['subtitle']}}</p>
+    <a href="{{post['url']}}">Read on Medium</a>
+    {% endfor %}
 {% endblock %}
