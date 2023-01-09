@@ -1,5 +1,6 @@
 from flask import Flask
 from .env import app_secret_key
+import os 
 
 def create_app():
     app = Flask(__name__)

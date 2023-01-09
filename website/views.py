@@ -3,6 +3,7 @@ from .env import twi_api_key, twi_api_secret, twi_access_token, twi_access_secre
 import tweepy
 import requests
 import json
+import os
 
 #Set Views and vars
 views = Blueprint('views', __name__)
@@ -78,5 +79,6 @@ def home():
 
 @views.route('/about-me')
 def about_me():
-    return render_template('about-me.html')
+    file_name = url_for('static', filename='img/me.jpeg')
+    return render_template('about-me.html', my_photo=file_name)
 
