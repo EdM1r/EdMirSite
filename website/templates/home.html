@@ -1,18 +1,59 @@
 {% extends "base.html" %}
 {% block title%} Ed Mir's Site {% endblock %}
 {% block content%}
-    <h2>Latest Twitter Posts</h2>
-    {% for tweet in tweets %}
-        <p>{{tweet.text}} <a href="https://twitter.com/canonnist/status/{{tweet.id}}">Learn More</a></p>
-    {% endfor %}
-    <h2>Latest Instagram Posts</h2>
-    {% for post in posts_ig %}
-        <a href="{{post['permalink']}}"><img src="{{post['media_url']}}" class="rounded float-start" alt="Image" height="400px" width="400px"></a>
-    {% endfor %}
-    <h2>Best Articles from Medium</h2>
-    {% for post in medium_posts %}
-    <h4>{{post['title']}}</h4>
-    <p>{{post['subtitle']}}</p>
-    <a href="{{post['url']}}">Read on Medium</a>
-    {% endfor %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>My Latest Twitter Posts</h2>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            {% for tweet in tweets %}
+                <p>{{tweet.text}} <a href="https://twitter.com/canonnist/status/{{tweet.id}}">Learn More</a></p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>My Latest Instagram Posts</h2>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            {% for post in posts_ig %}
+                <a href="{{post['permalink']}}"><img src="{{post['media_url']}}" class="rounded float-start" alt="Image" height="400px" width="400px"></a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>My Best Articles from Medium</h2>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            {% for post in medium_posts %}
+            <h5>{{post['title']}}</h5>
+            <p>{{post['subtitle']}}</p>
+            <p><a href="{{post['url']}}">Read on Medium</a></p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
 {% endblock %}
